@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot Installer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            margin-top: 60px;
+            padding: 48px 56px 40px 56px;
+            border-radius: 20px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            max-width: 820px;
+            min-width: 340px;
+            width: 90vw;
+            text-align: center;
+            transition: max-width 0.2s, padding 0.2s;
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 12px;
+        }
+        .desc {
+            color: #5a6a85;
+            margin-bottom: 32px;
+        }
+        .download-btn {
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 32px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 24px;
+        }
+        .download-btn:hover {
+            background: #2563eb;
+        }
+        .guide {
+            background: linear-gradient(120deg, #f1f5fa 60%, #e3e9f7 100%);
+            border-radius: 18px;
+            padding: 32px 36px 28px 36px;
+            margin-top: 36px;
+            text-align: left;
+            color: #2d3a4b;
+            font-size: 1.13em;
+            box-shadow: 0 2px 18px rgba(79,140,255,0.09);
+        }
+        @media (max-width: 700px) {
+            .container {
+                max-width: 98vw;
+                padding: 18px 4vw 18px 4vw;
+            }
+            .guide {
+                padding: 18px 2vw 16px 2vw;
+                font-size: 1em;
+            }
+        }
+        .guide ul {
+            margin: 18px 0 22px 0;
+            padding-left: 22px;
+            color: #4f8cff;
+            font-size: 1.05em;
+        }
+        .guide li {
+            margin-bottom: 7px;
+        }
+        .guide .prompt-title {
+            margin-bottom: 12px;
+            color: #2d3a4b;
+            font-weight: bold;
+            font-size: 1.07em;
+        }
+        .guide .prompt-bash {
+            background: #222;
+            color: #fff;
+            border-radius: 8px;
+            padding: 18px 16px 14px 16px;
+            font-size: 1.04em;
+            overflow-x: auto;
+            margin-bottom: 12px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+        }
+        .guide .prompt-bash .line-label {
+            color: #7ec699;
+        }
+        .guide .prompt-bash .prompt-json {
+            color: #e7c664;
+        }
+        .guide .prompt-tip {
+            color: #5a6a85;
+            font-size: 0.99em;
+        }
+        code, pre {
+            background: #e8eef7;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.98em;
+        }
+        a.guide-link {
+            color: #4f8cff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChatBot Installer</h1>
+        <div class="desc">AI 챗봇을 쉽고 빠르게 설치하세요!</div>
+        <button class="download-btn" onclick="window.location.href='https://tinyurl.com/ChatBot-Installer'">다운로드</button>
+        <div class="guide">
+            <b>설치 및 사용 가이드</b>
+            <ul>
+                <li>다운로드 버튼을 클릭하면 챗봇 설치가 시작됩니다.</li>
+                <li>설치가 완료되면 폴더 속 <b>Guide</b>라는 파일을 실행시킨 후 안내에 따라 챗봇을 실행하세요.</li>
+                <li>챗봇의 성격(프롬포트)을 바꾸고 싶다면 <b>app.py의 20번째 줄</b>을 수정하세요.</li>
+            </ul>
+            <div class="prompt-title">AI 프롬포트 수정 예시</div>
+            <pre class="prompt-bash"><span class="line-label">20번째 줄</span>:
+            <span class="prompt-json">{"role": "system", "content": "너는 친근한 AI 조언자야. 반말로 대화해."},</span>
+            </pre>
+            <pre class="prompt-bash"><span class="line-label">20번째 줄</span>:
+            <span class="prompt-json">{"role": "system", "content": "너는 지적인 AI 조언자야. 논리적이고 깔끔하게 설명해."},</span>
+            </pre>
+            <pre class="prompt-bash"><span class="line-label">20번째 줄</span>:
+            <span class="prompt-json">{"role": "system", "content": "너는 유쾌한 AI 친구야. 재미있는 말투를 사용해."},</span></pre>
+            <div class="prompt-tip">위와 같이 프롬포트를 원하는 컨셉으로 바꿔서 다양한 AI 챗봇을 만들어보세요!</div>
+        </div>
+    </div>
+</body>
+</html>
